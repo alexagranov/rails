@@ -1,9 +1,9 @@
+require 'active_record/relation/predicate_builder/relation_handler'
+require 'active_record/relation/predicate_builder/array_handler'
+
 module ActiveRecord
   class PredicateBuilder # :nodoc:
     @handlers = []
-
-    autoload :RelationHandler, 'active_record/relation/predicate_builder/relation_handler'
-    autoload :ArrayHandler, 'active_record/relation/predicate_builder/array_handler'
 
     def self.resolve_column_aliases(klass, hash)
       # This method is a hot spot, so for now, use Hash[] to dup the hash.
